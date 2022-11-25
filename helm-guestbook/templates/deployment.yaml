@@ -9,14 +9,14 @@ metadata:
     heritage: {{ .Release.Service }}
 spec:
   strategy:
-        canary:
-          steps:
-          - setWeight: 20
-          - pause:
-              duration: "30s"
-          - setWeight: 50
-          - pause:
-              duration: "30s"
+    canary:
+      steps:
+      - setWeight: 20
+      - pause:
+          duration: "30s"
+      - setWeight: 50
+      - pause:
+          duration: "30s"
   replicas: {{ .Values.replicaCount }}
   revisionHistoryLimit: 3
   selector:
